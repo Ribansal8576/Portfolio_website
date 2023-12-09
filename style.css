@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.warpper{
+   height: 100vh;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+.container{
+  width: 1200px;
+  margin: 0 auto;
+}
+.navvar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.navlogo{
+   display: flex;
+   align-items: center;  
+}
+.logo-text{
+    margin-left: -1.2rem;
+    font-size: 28px;
+}
+.logo{
+   height: 10vh;
+}
+.communicationBar{
+    display: flex;
+   gap: 2rem;
+   padding: 0.4rem;
+}
+.communicationBar div{
+    font-size: 20px;
+    font-weight: 500;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.communicationBar:hover {
+    cursor:grab/pointer;
+    font-weight:bolder;
+    transition: 0.8s;
+}
+.communicationBar a{
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+.hero-section{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+.faded-text{
+    user-select: none;
+
+   font-size: 7em;  
+   color: rgb(231,231,231);
+   bottom:-16;
+   left:-5%;
+   font-weight: bold;
+   transition: all 3s;
+}
+.hero-secton-left{
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   justify-content:center;
+}
+.hero-heading{
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+.role{
+    color: #4e45d5;
+    font-weight:800 ;
+}
+.hero-sub-heading{
+    font-size: 45px;
+    line-height:45px ;
+}
+.hero-description{
+    margin-top: 1rem;
+    width: 70%;
+    font-weight: 500;
+}
+.box{
+    
+    display:flex;
+    align-items: center;
+}
+
+.btn{
+     
+    border: 1px solid transparent;
+    padding: 0.8rem 2.3rem;
+    background-color:rgb(241, 91, 91);
+    box-shadow:5px 5px 7px 0px #0000003f;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;    
+}
+.btn::before{
+    content:"";
+    background-color:whitesmoke; 
+    position:absolute;
+    transition:all 0.8s;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: -1;
+
+}
+.btn:hover::before{
+        transform: scaleX(1);
+}
+.btn:hover{
+    border: solid 3px var(--bg0range);
+    color: black;
+}
+
+.hero-section-right{
+    position: relative;
+    
+}
+.icon{
+    position: absolute;
+
+    z-index: 1;
+}
+.userImage{
+    padding: 2.5rem;
+    filter: grayscale(1);
+    animation-name:picture;
+    animation-duration:5s ;
+    animation-timing-function: linear;
+    animation-delay:0.5 ;
+    animation-iteration-count: infinite;
+
+}
+@keyframes picture{
+    0%{
+           transform:scale(1) ;
+           filter: grayscale(0);
+
+    }
+    50%{
+        transform: scale(1.15);
+        box-shadow:3px 3px 10px rgb(80, 76, 76);
+        filter: grayscale(1);
+    }
+    100%{
+        transform: scale(1);
+        filter: grayscale(0);
+    }
+}
+.icon-dots{
+   position: absolute;
+ 
+  bottom: -1rem;
+  right: 1rem;
+  animation-name: dotmove ;
+  animation-delay:0s ;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes dotmove{
+     0%{
+        transform: translateY(0px);
+     }
+     50%{
+        transform: translateY(-15px);
+     }
+     100%{
+        transform: translateY(0px);
+     }
+}
+.icon-cube{
+    position: absolute;
+    right: 1rem;
+    top: -2rem;
+    animation:2s ease-in-out 0s cubemove;
+    animation-iteration-count: infinite;
+
+}
+@keyframes cubemove{
+    0%{
+        transform:rotatey(0deg) translatey(0rem);
+       
+     }
+     50%{
+        transform:rotatey(180deg) translatey(-12px);
+       
+     }
+     100%{
+        transform:rotatey(0deg) translateY(orem);
+        
+     }
+ }
+.icon-circle{
+    bottom: 1rem;
+    left: 0;
+    animation:3s linear 0s circlemove;
+    animation-iteration-count: infinite; 
+}
+
+@keyframes circlemove{
+    0%{
+        left: 0rem;
+       bottom: 1rem;
+     }
+     50%{
+        left: 5%;
+        bottom: 10%;
+       
+     }
+     100%{
+        left: 0rem;
+        bottom: 1rem;
+     }
+ }
+ .icon-zigzak{
+    
+    bottom: 20rem;
+    animation:6s linear 0s zigzakmove;
+    animation-iteration-count: infinite;
+ }
+ @keyframes zigzakmove{
+    0%{
+        transform: translateX(0px);
+    }
+    50%{ 
+        transform: translateX(-30px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+ }
+ .icon-plus{
+    right: 10rem;
+    top: -0.8rem;
+    animation: 4s linear 0s plusmove;
+    animation-iteration-count: infinite;
+ }
+ @keyframes plusmove{
+     0%{
+        top: -0.8rem;
+        right: 10rem;
+     }
+     50%{
+        top: 3%;
+        right: 40%;
+     }
+     100%{
+        top: -0.8rem;
+        right: 10rem;
+     }
+ }
+
+ 
